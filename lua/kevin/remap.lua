@@ -1,6 +1,6 @@
 local nnoremap = require("kevin.keymap").nnoremap
 
-nnoremap("<leader>fd", "<cmd>Ex<CR>")
+nnoremap("<leader>FD", "<cmd>Ex<CR>")
 
 
 --vim.g.mapleader=' '
