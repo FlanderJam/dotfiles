@@ -43,6 +43,7 @@ lspconfig.dockerls.setup({})
 lspconfig.svelte.setup({})
 lspconfig.html.setup({})
 lspconfig.rust_analyzer.setup({})
+lspconfig.emmet_ls.setup({})
 
 ---
 -- LSP Keybindings
