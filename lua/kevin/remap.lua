@@ -2,6 +2,10 @@ local nnoremap = require("kevin.keymap").nnoremap
 
 -- General Remap
 nnoremap("<leader>FD", "<cmd>Ex<CR>")
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
+nnoremap("n", "nzzzv")
+nnoremap("N", "Nzzzv")
 
 -- Telescope Remaps
 nnoremap("<leader>FF", "<cmd>Telescope find_files<cr>")

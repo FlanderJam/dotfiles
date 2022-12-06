@@ -16,8 +16,8 @@ return require('packer').startup(function(use)
     use 'williamboman/mason-lspconfig.nvim'
     use 'neovim/nvim-lspconfig'
     use {
-           'nvim-treesitter/nvim-treesitter',
-           run = ':TSUpdate'
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
     }
 
     -- autocomplete stuff
@@ -26,23 +26,24 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
-    use ({'L3MON4D3/LuaSnip', tag = "v<CurrentMajor>.*"})
+    use({ 'L3MON4D3/LuaSnip', tag = "v1.*" })
     use 'saadparwaiz1/cmp_luasnip'
     use 'rafamadriz/friendly-snippets'
 
     -- Finder
     use 'nvim-lua/plenary.nvim'
     use {
-        'nvim-telescope/telescope.nvim', branch = '0.1.0',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        'nvim-telescope/telescope.nvim', branch = '0.1.x',
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     -- color scheme
     use 'folke/tokyonight.nvim'
     use 'rafamadriz/neon'
-    use 'kyazdani42/nvim-web-devicons'
+    use 'nvim-tree/nvim-web-devicons'
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
 end)

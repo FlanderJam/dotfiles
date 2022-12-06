@@ -1,9 +1,13 @@
 require('tokyonight').setup({
-    style = 'storm',
+    style = 'night',
     transparent = true,
 })
 
-function ColorThis()
+vim.cmd([[
+    colorscheme tokyonight
+]])
+
+--function ColorThis()
     --vim.g.tokyonight_style="night"
     --vim.g.tokyonight_transparent=true
     --vim.g.gruvbox_baby_telescope_theme=1
@@ -12,9 +16,9 @@ function ColorThis()
     --vim.g.neon_bold = true
     --vim.g.neon_transparent = true
 
-    vim.cmd([[
-        colorscheme tokyonight
-    ]])
-end
+--    vim.cmd([[
+--        colorscheme tokyonight
+--    ]])
+--end
 
-ColorThis()
+--ColorThis()
