@@ -47,7 +47,7 @@ lspconfig.emmet_ls.setup({})
 lspconfig.eslint.setup({})
 lspconfig.denols.setup({})
 lspconfig.cssls.setup({})
-lspconfig.prettier.setup({})
+lspconfig.sqlls.setup({})
 
 ---
 -- LSP Keybindings
