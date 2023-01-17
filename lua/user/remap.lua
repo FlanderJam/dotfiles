@@ -1,4 +1,4 @@
-local nnoremap = require("flanderjam.keymap").nnoremap
+local nnoremap = require("user.keymap").nnoremap
 
 -- General Remap
 vim.keymap.set({"n", "v"}, "<Space>", "<Nop>", { silent = true})

@@ -1,1 +1,1 @@
-require('flanderjam')
+require('user')
