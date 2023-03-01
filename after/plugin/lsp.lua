@@ -64,6 +64,9 @@ local servers = {
             telemetry = { enable = false },
         },
     },
+    volar = {},
+    svelte = {},
+    tailwindcss = {},
 }
 
 -- Setup neovim lua configuration
