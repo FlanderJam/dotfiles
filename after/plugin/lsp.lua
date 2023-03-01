@@ -58,7 +58,7 @@ local servers = {
     html = {},
     dockerls = {},
 
-    sumneko_lua = {
+    lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
             telemetry = { enable = false },
@@ -95,9 +95,6 @@ mason_lspconfig.setup_handlers {
         }
     end,
 }
-
--- Turn on lsp status information
-require('fidget').setup()
 
 
 

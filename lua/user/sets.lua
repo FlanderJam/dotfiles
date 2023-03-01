@@ -14,8 +14,9 @@ vim.o.scrolloff = 8
 vim.o.signcolumn = "yes"
 vim.o.colorcolumn = "80"
 vim.o.gcr = ""
-vim.o.completeopt = 'menu,menuone,noselect'
+vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
+vim.o.mouse = 'a'
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

@@ -9,14 +9,8 @@ nnoremap("n", "nzzzv")
 nnoremap("N", "Nzzzv")
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
-
--- Telescope Remaps
--- nnoremap("<leader>FF", "<cmd>Telescope find_files<cr>")
--- nnoremap("<leader>FG", "<cmd>Telescope live_grep<cr>")
--- nnoremap("<leader>FB", "<cmd>Telescope buffers<cr>")
--- nnoremap("<leader>FH", "<cmd>Telescope help_tags<cr>")
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnositc message" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnsotics list "})
 
