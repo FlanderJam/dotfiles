@@ -24,7 +24,7 @@ require('lazy').setup({
         'neovim/nvim-lspconfig',
         dependencies = {
             -- automatically install LSPs to stdpath for neovim
-            'williamboman/mason.nvim',
+            { 'williamboman/mason.nvim', config = true },
             'williamboman/mason-lspconfig.nvim',
 
             -- useful status updates for LSP
@@ -73,7 +73,7 @@ require('lazy').setup({
         config = function()
             require('tokyonight').setup({
                 style = 'night',
-                transparent = true,
+                transparent = false,
             })
             vim.cmd.colorscheme 'tokyonight'
         end,
@@ -116,9 +116,7 @@ require('lazy').setup({
         dependencies = {
             'nvim-treesitter/nvim-treesitter-textobjects',
         },
-        config = function()
-            pcall(require('nvim-treesitter.install').update { with_sync = true })
-        end,
+        build = ":TSUpdate",
     },
 
     -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
