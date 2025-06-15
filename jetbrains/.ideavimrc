@@ -1,0 +1,156 @@
+""" Map leader to space ------------------------------------------------------
+let mapleader=" "
+
+""" Options ------------------------------------------------------------------
+set scrolloff=10
+set number
+set relativenumber
+set showmode
+set showcmd
+set visualbell
+"set clipboard+=unnamed
+set timeoutlen=3000
+set colorcolumn=80
+
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+nnoremap <Esc> :nohlsearch<CR>
+
+""" Bundled Plugins ----------------------------------------------------------
+set surround
+set highlightedyank
+set sneak
+set nerdtree
+set commentary
+
+""" IdeaVim Settings ---------------------------------------------------------
+set ideamarks=true
+
+""" WhichKey Settings --------------------------------------------------------
+" Base Settings
+set which-key
+set timeoutlen=5000
+let g:WhichKey_FontSize = 16
+let g:WhichKey_CommandColor = "#41ead4"
+let g:WhichKey_PrefixColor = "#f335b2"
+let g:WhichKey_SortOrder = "by_key_prefix_first"
+let g:WhichKey_ShowVimActions = "true"
+
+" Leader Maps
+let g:WhichKeyDesc_leader = "<leader> Leader Key"
+let g:WhichKeyDesc_nerdtree = "<leader>x File E[X]plorer"
+let g:WhichKeyDesc_recentfiles = "<leader><leader> Recent Files"
+let g:WhichKeyDesc_close_tab = "<leader>q [Q]uit Active Tab"
+let g:WhichKeyDesc_terminal = "<leader>t [T]erminal"
+
+" Display Maps
+let g:WhichKeyDesc_display = "<leader>d [D]isplay Options"
+let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle [Z]en Mode"
+let g:WhichKeyDesc_df_mode = "<leader>dd Toggle [D]istraction-Free Mode"
+let g:WhichKeyDesc_fullscreen = "<leader>df Toggle [F]ull Screen"
+
+" Window Maps
+let g:WhichKeyDesc_window = "<leader>w [W]indow"
+let g:WhichKeyDesc_window_split_vertically = "<leader>wv Split [V]ertically"
+let g:WhichKeyDesc_window_split_horizontally = "<leader>wh Split [H]orizontally"
+let g:WhichKeyDesc_window_split_unsplit = "<leader>wu [U]nsplit"
+let g:WhichKeyDesc_window_move_editor = "<leader>wm [M]ove Editor to Opposite Tab Group"
+
+" Action Maps
+let g:WhickKeyDesc_action = "<leader>a [A]ctions"
+let g:WhickKeyDesc_action_context_menu = "<leader>ac [C]ontext Menu"
+let g:WhickKeyDesc_action_context_menu = "<leader>as [S]earch everywhere"
+
+" Search Maps
+let g:WhichKeyDesc_search = "<leader>s [S]earch"
+let g:WhichKeyDesc_search_files = "<leader>sf [F]ile"
+let g:WhichKeyDesc_search_recent_files = "<leader>s. Recent Files"
+let g:WhichKeyDesc_search_word = "<leader>sw [W]ord"
+let g:WhichKeyDesc_search_recent_locations = "<leader>sl Recent [L]ocations"
+
+" File Maps
+let g:WhichKeyDesc_files = "<leader>f [F]ile"
+let g:WhichKeyDesc_files_new_scratch = "<leader>fs [S]cratch"
+let g:WhichKeyDesc_files_rename_current = "<leader>fr [R]ename"
+
+" Refactoring Maps
+let g:WhichKeyDesc_refactoring = "<leader>r [R]efactoring"
+let g:WhichKeyDesc_refactoring_rename = "<leader>rn Re[N]ame Element"
+let g:WhichKeyDesc_refactoring_method = "<leader>rm Extract [M]ethod"
+let g:WhichKeyDesc_refactoring_variable = "<leader>rv Introduce [V]ariable"
+let g:WhichKeyDesc_refactoring_field = "<leader>rf Introduce [F]ield"
+let g:WhichKeyDesc_refactoring_signature = "<leader>rs Change [S]ignature"
+let g:WhichKeyDesc_refactoring_all = "<leader>rr [R]efactoring Menu"
+
+
+
+""" Remappings ---------------------------------------------------------------
+" Leader Maps
+map <leader>x :NERDTreeToggle<CR>
+map <leader><leader> <Action>(RecentFiles)
+map <leader>q <action>(CloseContent)
+map <leader>t <Action>(ActivateTerminalToolWindow)
+
+" Display Maps
+map <leader>dd <action>(ToggleDistractionFreeMode)
+map <leader>dz <action>(ToggleZenMode)
+map <leader>df <action>(ToggleFullScreen)
+
+" Window Maps
+map <leader>wv <Action>(SplitVertically)
+map <leader>wh <Action>(SplitHorizontally)
+map <leader>wu <Action>(Unsplit)
+map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+
+" Action Maps
+map <leader>ac <Action>(ShowIntentionActions)
+map <leader>as <Action>(SearchEverywhere)
+
+" Search Maps
+map <leader>sf <Action>(GotoFile)
+map <leader>s. <Action>(RecentFiles)
+map <leader>sw <Action>(FindInPath)
+map <leader>sl <Action>(RecentLocations)
+
+" Files Maps
+map <leader>fs <Action>(NewScratchFile)
+map <leader>fr <Action>(RenameFile)
+
+" Refactoring
+map <leader>rn <Action>(RenameElement)
+map <leader>rm <Action>(ExtractMethod)
+map <leader>rv <Action>(IntroduceVariable)
+map <leader>rf <Action>(IntroduceField)
+map <leader>rs <Action>(ChangeSignature)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+
+" Tab Navigation (Might not need if not using tabs)
+nnoremap <A-n> :tabnext<CR>
+nnoremap <A-p> :tabprev<CR>
+
+" Pane Navigation
+nnoremap <A-h> <C-w>h
+nnoremap <A-l> <C-w>l
+nnoremap <A-k> <C-w>k
+nnoremap <A-j> <C-w>j
+
+" Center view after page jumps
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+
+" Marks
+" These already exist, just putting here for documentation
+" m{a-zA-Z} - Set Mark
+" '{a-zA-Z} - Jump To Mark
+" :delm {a-zA-Z} - Delete Mark
+
+" Code Folding
+" These already exist, just putting here for documentation
+" zo - Open Fold Under Cursor
+" zc - Close Fold Under Cursor
+" zO - Open Fold Under Cursor Recursively
+" zC - Close Fold Under Cursor Recursively
+" zR - Open All Folds Recursively
+" zM - Close All Folds Recursively

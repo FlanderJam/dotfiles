@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+# Source shared configuration
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/stow-config"
+
+# Initialize and update submodules (following their tracked branches)
+echo "Updating git submodules..."
+git submodule update --init --recursive --remote
+
+# Change to dotfiles directory
+pushd "$DOTFILES" || exit 1
+
+# Stow home folders to $HOME
+echo "Installing home dotfiles..."
+IFS=',' read -ra HOME_FOLDERS <<< "$STOW_HOME_FOLDERS"
+for folder in "${HOME_FOLDERS[@]}"; do
+    echo "stow $folder -> $HOME"
+    stow -D "$folder" --target="$HOME"
+    stow "$folder" --target="$HOME"
+done
+
+# Stow config folders to $HOME/.config
+echo "Installing config dotfiles..."
+IFS=',' read -ra CONFIG_FOLDERS <<< "$STOW_CONFIG_FOLDERS"
+for folder in "${CONFIG_FOLDERS[@]}"; do
+    echo "stow $folder -> $HOME/.config"
+    stow -D "$folder" --target="$HOME/.config"
+    stow "$folder" --target="$HOME/.config"
+done
+
+# Stow default wallpaper
+IFS=',' read -ra CONFIG_FOLDERS <<< "$STOW_CONFIG_FOLDERS"
+for folder in "${CONFIG_FOLDERS[@]}"; do
+    echo "stow $folder -> $HOME/.config"
+    stow -D "$folder" --target="$HOME/.config"
+    stow "$folder" --target="$HOME/.config"
+done
+echo "stow wallpapers -> $HOME/Pictures/wallpapers"
+stow -D "wallpapers" --target="$HOME/Pictures/wallpapers"
+stow "wallpapers" --target="$HOME/Pictures/wallpapers"
+
+popd
+
+echo "Dotfiles installation complete!"

@@ -1,0 +1,8 @@
+[submodule "nvim/nvim"]
+	path = nvim/nvim
+	url = https://github.com/FlanderJam/nvim.git
+	branch = mini
+[submodule "nvim-lsp/nvim-lsp"]
+	path = nvim-lsp/nvim-lsp
+	url = https://github.com/FlanderJam/nvim-lsp.git
+	branch = trunk

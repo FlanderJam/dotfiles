@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Shared configuration for stow scripts
+# This file is sourced by both arch-install and cleanup scripts
+
+# Default folders to stow to $HOME (override with STOW_HOME_FOLDERS env var)
+if [[ -z $STOW_HOME_FOLDERS ]]; then
+    STOW_HOME_FOLDERS="bash,git,jetbrains"
+fi
+
+# Default folders to stow to $HOME/.config (override with STOW_CONFIG_FOLDERS env var)
+if [[ -z $STOW_CONFIG_FOLDERS ]]; then
+    STOW_CONFIG_FOLDERS="fuzzel,ghostty,hypr,mako,nushell,nvim,nvim-lsp,zellij,zls"
+fi
+
+# Default dotfiles location
+if [[ -z $DOTFILES ]]; then
+    DOTFILES=$HOME/.dotfiles
+fi
+
+# For testing, uncomment these lines:
+# STOW_HOME_FOLDERS="home_test,home_test2"
+# STOW_CONFIG_FOLDERS="config_test,config_test2"

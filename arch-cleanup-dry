@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Simple wrapper to run cleanup in dry-run mode
+"$(dirname "$0")/arch-cleanup" dry
