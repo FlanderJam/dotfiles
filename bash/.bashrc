@@ -24,3 +24,6 @@ export PATH=$PATH:/usr/local/go/bin
 
 # This must go at bottom
 eval "$(starship init bash)"
+
+# opencode
+export PATH=/home/flanderjam/.opencode/bin:$PATH

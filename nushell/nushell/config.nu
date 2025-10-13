@@ -21,7 +21,17 @@ $env.config.buffer_editor = "nvim"
 $env.config.show_banner = false
 
 alias nv = nvim
-alias n. = nv ~/.config/nvim
+def n. [] {
+	let starting_dir = $env.PWD
+	cd ~/.config/nvim
+	nv .
+	cd $starting_dir
+}
+
+def jw [] {
+	ssh kevin@45.79.228.158
+}
+
 alias zel = zellij -l welcome
 
 use std/util "path add"
@@ -30,6 +40,9 @@ path add $FNM_PATH
 
 const ZIG_NIGHTLY_PATH = "/opt/zig/nightly"
 path add $ZIG_NIGHTLY_PATH
+
+const OPENCODE_PATH = "/home/flanderjam/.opencode/bin"
+path add $OPENCODE_PATH
 
 def nufzf [] {$in | each {|i| $i | to json --raw} | str join "\n" | fzf  | from json}
 

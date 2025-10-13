@@ -22,7 +22,7 @@
 font-family = ""
 font-family = "FantasqueSansM Nerd Font Mono"
 window-padding-x = 2
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 background-opacity = 0.95
 #
 # # Spacing around the equals sign does not matter.
